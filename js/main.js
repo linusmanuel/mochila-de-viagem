@@ -3,11 +3,12 @@ const lista = document.querySelector('.lista');
 
 form.addEventListener('submit', (evento) => {
 	evento.preventDefault();
-	console.log();
-	creaElemento(
-		evento.target.elements['nome'].value,
-		evento.target.elements['quantidade'].value
-	);
+	const nome = evento.target.elements['nome'];
+	const quantidade = evento.target.elements['quantidade'];
+	creaElemento(nome.value, quantidade.value);
+
+	nome.value = '';
+	quantidade.value = '';
 });
 
 const creaElemento = (nome, quantidade) => {
@@ -21,4 +22,7 @@ const creaElemento = (nome, quantidade) => {
 	novoItem.innerHTML += nome;
 
 	lista.appendChild(novoItem);
+
+	localStorage.setItem('nome', nome);
+	localStorage.setItem('quantidade', quantidade);
 };

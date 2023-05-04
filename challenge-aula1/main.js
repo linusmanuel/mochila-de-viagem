@@ -3,10 +3,12 @@ const form = document.querySelector('[data-form]');
 
 form.addEventListener('submit', (evento) => {
 	evento.preventDefault();
-	createElement(
-		evento.target.elements['name'].value,
-		evento.target.elements['quantity'].value
-	);
+	const nome = evento.target.elements['name'];
+	const quantity = evento.target.elements['quantity'];
+	createElement(nome.value, quantity.value);
+
+	nome.value = '';
+	quantity.value = '';
 });
 
 const createElement = (produto, quantity) => {
@@ -20,4 +22,7 @@ const createElement = (produto, quantity) => {
 	newItem.innerHTML += produto;
 
 	list.appendChild(newItem);
+
+	localStorage.setItem('nome', produto);
+	localStorage.setItem('quantity', quantity);
 };
