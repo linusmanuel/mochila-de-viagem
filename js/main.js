@@ -1,5 +1,6 @@
 const form = document.querySelector('#novoItem');
 const lista = document.querySelector('.lista');
+const items = [];
 
 form.addEventListener('submit', (evento) => {
 	evento.preventDefault();
@@ -23,6 +24,12 @@ const creaElemento = (nome, quantidade) => {
 
 	lista.appendChild(novoItem);
 
-	localStorage.setItem('nome', nome);
-	localStorage.setItem('quantidade', quantidade);
+	const itemAtual = {
+		nome: nome,
+		quantidade: quantidade,
+	};
+
+	items.push(itemAtual);
+
+	localStorage.setItem('item', JSON.stringify(items));
 };
