@@ -20,16 +20,15 @@ form.addEventListener('submit', (evento) => {
 
 	if (existe) {
 		itemAtual.id = existe.id;
-		console.log(existe.id);
 		atualizaElemento(itemAtual);
+
+		items[existe.id] = itemAtual;
 	} else {
 		itemAtual.id = items.length;
 		creaElemento(itemAtual);
 
 		items.push(itemAtual);
 	}
-
-	items.push(itemAtual);
 
 	localStorage.setItem('items', JSON.stringify(items));
 
