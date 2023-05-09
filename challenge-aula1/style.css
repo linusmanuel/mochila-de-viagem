@@ -9,7 +9,7 @@
 }
 
 body {
-
+  font-family: Arial, Helvetica, sans-serif;
   background-image: url("./bg.jpg");
   display: flex;
   justify-content: center;
@@ -30,6 +30,12 @@ body {
   border: var(--glass-border);
 }
 
+.box-header {
+  padding-bottom: 30px;
+  font-size: 22px;
+  color: #fff;
+}
+
 .c-input {
   background-color: var(--bg);
   height: 40px;
@@ -46,6 +52,11 @@ body {
   font-size: 17px;
 }
 
+.c-input:focus {
+  outline: none;
+  border: 1px solid violet;
+}
+
 .c-btn {
   background-color: var(--bg);
   display: flex;
@@ -55,9 +66,8 @@ body {
   height: 40px;
   width: 160px;
   border: var(--glass-border);
-  color: violet;
+  color: #fff;
   font-weight: bold;
-  text-transform: uppercase;
   font-size: 18px;
   padding: 10px;
   cursor: pointer;
@@ -79,7 +89,36 @@ hr {
 .list {
   list-style: none;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 40px;
+}
+
+.list li {
+  padding: 10px;
+  background-color: var(--bg);
+  border: var(--glass-border);
+  display: flex;
+  gap: 10px;
+  color: #525252;
+  align-items: center;
+}
+
+.close {
+  background-color: orangered;
+  color: #fff;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: red;
 }
 
 @media screen and (min-width: 768px) {
